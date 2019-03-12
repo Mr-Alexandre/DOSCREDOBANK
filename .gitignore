@@ -1,8 +1,4 @@
 node_modules
 package-lock.json
+dist
 *.psd
-balls.png
-conditions.png
-cottage.png
-graduate.png
-student.png

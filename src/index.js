@@ -1,6 +1,8 @@
-import './index.scss'
+import html from './index.pug'
+import style from './index.scss'
+import $ from 'jquery'
 import './jquery-ui(custom).min.js'
-import './jquery-3.3.1.min.js'
+
 
 $(document).ready(function() {
     var labels = $("#calculation-contribution-range-box").find(".gc-slider-range__lables")[0];

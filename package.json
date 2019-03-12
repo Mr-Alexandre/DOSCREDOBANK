@@ -6,12 +6,15 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development",
-    "server": "webpack --watch --mode production"
+    "server": "webpack --watch --mode production --open"
   },
   "author": "Alexandr Lashenko",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.3.4",
     "autoprefixer": "^9.4.10",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
@@ -22,7 +25,6 @@
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.3",
     "pug-html-loader": "^1.1.5",
-    "pug-loader": "^2.4.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
