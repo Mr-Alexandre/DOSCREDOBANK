@@ -1,0 +1,17 @@
+.gc-input{
+    input[type="text"]{
+        width: inherit;
+    }
+}
+.gc-input_ms{
+    input[type="text"]{
+        height: 37px;
+        box-sizing: border-box;
+        border: 1px solid $color-grey-border;
+        background-color: #f5f7f6;
+        color: $color-black;
+        font-family: $regular;
+        font-size: 18px;
+        padding: 0px 10px;
+    }
+}

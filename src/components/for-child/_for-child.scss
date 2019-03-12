@@ -1,0 +1,64 @@
+.gc-for-child{
+    background-color: $color-grey;
+    h2{
+        font-size: 36px;
+        color: $color-black;
+        font-family: $bold;
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+    }
+    p{
+        text-align: center;
+        font-size: 18px;
+        color: $color-black;
+        font-family: $regular;
+    }
+}
+.gc-for-child-containber{
+
+}
+.gc-for-child-card {
+    width: 47%;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(62, 56, 56, 0.4);
+        transition: 200ms;
+    }
+    
+    &:hover .gc-for-child-card__image{
+        transform: scale(1.1);
+    }
+    &:hover::after{
+        opacity: 0;
+    }
+    p{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: $bold;
+        font-size: 20px;
+        color: $color-white;
+        z-index: 2;
+    }
+}
+.gc-for-child-card__image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    transition: 200ms;
+}

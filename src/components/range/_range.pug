@@ -1,0 +1,9 @@
+mixin slider-range(count, val)
+    .gc-slider-range-box&attributes(attributes)
+        .gc-slider-range(data-range-lable=val id='calculation-contribution-range').gc-slider-range_horizontal
+        .gc-slider-range__lables
+            each v, i in val
+                - var step = ( 100/(val.length - 1) * i )
+                - var s = step != 0 ? step - 1.5 : step
+                span(style="left:"+ s +"%" data-index=i)= v
+                

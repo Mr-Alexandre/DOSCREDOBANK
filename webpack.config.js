@@ -1,6 +1,7 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 module.exports = (env, argv) => ({
@@ -32,7 +33,7 @@ module.exports = (env, argv) => ({
             {
                 test: /\.css$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    argv.mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -66,10 +67,33 @@ module.exports = (env, argv) => ({
                 test: /\.pug$/,
                 include: path.resolve(__dirname, 'src/'),
                 use:  [
-                    'html-loader',
-                    'pug-html-loader'
-                    // 'pug-loader'
+                    'html-loader?attr=false',
+                    {
+                        loader: 'pug-html-loader',
+                        query: { 
+                            pretty: true
+                        } 
+                    }
                 ]
+            },
+            {
+                test: /\.(ttf|eot|woff|woff2)$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        name: '[name].[ext]',
+                    }
+                }]
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
+                loader: "file-loader",
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'img',
+                    useRelativePath: true,
+                }
             }
         ]
     },
@@ -77,10 +101,16 @@ module.exports = (env, argv) => ({
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/index.pug',
-            inject: false
+            // inject: false
         }),
         new MiniCssExtractPlugin({
             filename: "index.css"
-        })
+        }),
+        new CopyWebpackPlugin(
+            [
+                {from: './src/font', to: 'font'},
+                {from: './src/jquery-3.3.1.js', to: ''}
+            ]
+        )
     ]
 });

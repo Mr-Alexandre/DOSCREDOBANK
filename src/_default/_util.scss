@@ -1,0 +1,88 @@
+.gc-link-list{
+    margin: 0;
+    padding: 0;
+    li{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        font-family: $bold;
+        color: $color-black;
+        margin-right: 20px;
+        &:last-child{
+            margin-right: 0px;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+            font-family: inherit;
+            font-size: 16px;
+        }
+    }
+}
+
+/*TODO: This method only works with uncompressed HTML and requires a fixed height on the container*/
+.gc-space-between{
+    text-align: justify;
+    font-size: 0;
+    &::after{
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+    & > :nth-child(1n + 1){
+        display: inline-block;
+        font-size: initial;
+    }
+}
+
+.gc-child-vertical-align{
+    & > :nth-child(1n + 1){
+       vertical-align: middle;
+    }
+}
+.gc-child-inline-block{
+    & > :nth-child(1n + 1){
+        display: inline-block;
+    }
+}
+
+.gc-title-cover-stamp-property{
+    width: 143px;
+    height: 143px;
+    position: absolute;
+    bottom: 70px;
+    right: -70px;
+    z-index: 4;
+}
+
+.gc-pos-rel{
+    position: relative;
+}
+
+.gc-card{
+    box-shadow: $box-shadow-card;
+}
+.gc-card_red{
+    background-image: linear-gradient(-84deg, $color-red 0%, $color-red-dark 100%);
+}
+.gc-card_white{
+    background-color: $color-white;
+}
+
+.gc-vertical-align{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gc-t-color-red{
+    color: $color-red;
+}
+.gc-w-160{
+    width: 160px;
+}
+.gc-text-center{
+    text-align: center;
+}

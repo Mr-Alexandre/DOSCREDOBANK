@@ -1,0 +1,63 @@
+.gc-advantages{
+    background-color: $color-grey;
+    background-image: url('./img/kyrgyzstan-map.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    h2{
+        font-size: 36px;
+        color: $color-black;
+        font-family: $bold;
+        width: 100%;
+        text-align: center;
+    }
+    
+}
+.gc-advantages__container{
+    margin-top: -20px;
+}
+.gc-advantages__card{
+    position: relative;
+    padding: 0px 20px;
+    padding-top: 40px;
+    width: 250px;
+    height: 225px;
+    margin: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 13px -3px 32px rgba(157, 152, 152, 0.26);
+    background-color: $color-white;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 0%;
+        height: 3px;
+        background-color: $color-red;
+        left: 0;
+        bottom: 0;
+        transition: 150ms;
+    }
+    &:hover::after{
+        width: 100%;
+    }
+    img{
+        width: 56px;
+        height: 56px;
+        margin-bottom: 22px;
+        position: relative;
+        // left: 50%;
+        // transform: translateX(-50%);
+    }
+    h3{
+        font-family: $bold;
+        font-size: 18px;
+        color: $color-black;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    p{
+        font-family: $regular;
+        font-size: 14px;
+        color: $color-black;
+        text-align: center;
+    }
+}

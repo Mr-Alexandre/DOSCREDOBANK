@@ -1,0 +1,16 @@
+section.gc-reasons.gc-pt-70.gc-pb-90
+    .gc-width-limiter
+        h2.gc-mb-40 Почему Дос-Кредобанк?
+        .gc-reasons-container.gc-child-inline-block.gc-text-center
+            mixin reasons-card(title, subtitle, text)
+                .gc-reasons-card
+                    .gc-reasons-card__title
+                        h2= title
+                        p= subtitle
+                    .gc-reasons-card__content
+                        p= text
+            +reasons-card('1997', 'год основания', "На рынке банковских услуг более 20 лет")
+            +reasons-card('2011', 'год', 'Признан “Лидером финансового сектора” Кыргызской фондовой биржей')
+            +reasons-card('2016', 'год', 'Число клиентов выросло в 20 раз')
+            +reasons-card('2017', 'год', 'Рост активов составил 25% (до 2 596 766 000 С)')
+            +reasons-card('2018', 'год', 'Один из немногих банков Кыргызстана, начисляющих 13% годовых по депозитам')                

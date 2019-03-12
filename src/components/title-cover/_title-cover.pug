@@ -1,0 +1,13 @@
+include ../button/_button.pug
+include ../stamp/_stamp.pug
+
+section.gc-title-cover
+    .gc-title-cover__car
+    .gc-width-limiter.gc-child-inline-block.gc-pos-rel
+        .gc-title-cover__inform
+            h1.gc-mb-15 ДЕПОЗИТ “БАЙ БОЛ!”
+            p.gc-mb-65 13% годовых + <br/> капитализация % каждый месяц
+            +button('Отправить заявку')(class='gc-button_fill-red')
+            
+        .gc-title-cover__pic
+            +stamp('./img/stamp.png')(class='gc-title-cover-stamp-property')

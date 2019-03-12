@@ -1,6 +1,29 @@
-h1{
-    color: green;
-}
+@import './_default/variables';
+@import '_default/mixin';
+@import './_default/_default';
+@import './_default/spacing';
+@import './_default/_normalize';
+@import './_default/_util';
+
+@import './components/button/_button';
+@import './components//header/_header';
+@import './components/title-cover/title-cover';
+@import './components/stamp/stamp';
+@import './components/stamp/stamp';
+@import './components/calculation-contribution/calculation-contribution';
+@import './components/radio/radio';
+@import './components/input/input';
+@import './components/range/range';
+@import './components/advantages/advantages';
+@import './components/conditions/conditions';
+@import './components/reasons/reasons';
+@import './components/for-child/for-child';
+@import './components/how-open/how-open';
+
 body{
-    background-color: red;
+    background-color: $color-white;
+}
+.gc-width-limiter{
+    max-width: 1100px;
+    margin: 0 auto;
 }

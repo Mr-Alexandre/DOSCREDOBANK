@@ -1,0 +1,50 @@
+// Font-face
+@mixin font-face($family, $path, $svg, $weight: normal, $style: normal){
+    @font-face{
+      font-family: $family;
+      src: url('#{$path}');
+      src: url('#{$path}?#iefix') format('embedded-opentype'), url('#{$path}');
+      font-weight: $weight;
+      font-style: $style;
+    }
+  }
+  
+  // Animation
+  @mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+      @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+      @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+      @content;
+    }
+    @-o-keyframes #{$animation-name} {
+      @content;
+    }
+    @keyframes #{$animation-name} {
+      @content;
+    }
+  }
+  
+  @mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+  }
+  
+  @mixin text-gradient($deg, $color-from, $color-to, $color-default) {
+    background: linear-gradient(#{$deg}deg, $color-from, $color-to);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: $color-default;
+  }
+  
+  @mixin bg-linear-gradient($deg, $color-from, $color-to, $color-default) {
+    background: $color-default;
+    background: linear-gradient(#{$deg}deg, $color-from, $color-to);
+  }
+  

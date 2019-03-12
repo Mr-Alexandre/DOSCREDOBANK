@@ -1,0 +1,83 @@
+.gc-conditions{
+    background-image: url('./img/conditions.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    h2{
+        color: $color-white;
+        font-family: $bold;
+        font-size: 36px;
+    }
+}
+.gc-select-condition{
+    p{
+        font-size: 18px;
+        font-family: $bold;
+        color: $color-white;
+        margin-right: 20px;
+    }
+}
+.gc-select-condition__item{
+    margin-right: 15px;
+    font-size: 18px;
+    font-family: $regular;
+    color: $color-white;
+    margin-right: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover{
+        font-family: $bold;
+        border-bottom: 2px solid $color-white;
+    }
+}
+.gc-select-condition__item_active{
+    font-family: $bold;
+    border-bottom: 2px solid $color-white;
+}
+
+.gc-conditions-card{
+    padding: 45px 45px 40px 40px;
+    display: table;
+    border-spacing: 0 20px;
+}
+.gc-conditions-card__section{
+    padding-bottom: 20px;
+    padding-bottom: 20px;
+    display: table-row;
+    & > :nth-child(1n + 1){
+        border-bottom: 1px solid $color-grey;
+    }
+    
+    
+}
+.gc-conditions-card__img{
+    display: table-cell;
+    padding-right: 20px;
+    padding-top: 7px;
+    img{
+        width: 24px;
+        height: 24px;
+    }
+}
+.gc-conditions-card__lable{
+    font-family: $bold;
+    font-size: 16px;
+    color: $color-black;
+    display: table-cell;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-right: 55px;
+    padding-bottom: 15px;
+}
+.gc-conditions-card__value{
+    
+    display: table-cell;
+    font-size: 30px;
+    font-family: $bold;
+    background: linear-gradient(-39deg, $color-yellow 0%, $color-gold 100%); 
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color-yellow, endColorstr=$color-gold, GradientType=1);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 15px;
+}

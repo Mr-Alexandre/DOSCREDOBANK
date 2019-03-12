@@ -1,0 +1,30 @@
+include ../radio/_radio.pug
+include ../input/_input.pug
+include ../range/_range.pug
+include ../button/_button.pug
+
+section.gc-calculation-contribution.gc-width-limiter.gc-pt-70.gc-pb-95
+    h2 Рассчитайте свой вклад
+    .gc-calculation-contribution__container.gc-mt-40
+        .gc-calculation-contribution__calc-input.gc-card.gc-card_white
+            .gc-child-inline-block.gc-child-vertical-align.gc-mb-30
+                p.gc-mr-10 Выберите валюту:
+                +custom-radio('calc', 'KGS', 'USD')
+            .gc-child-inline-block.gc-child-vertical-align.gc-mb-40
+                p.gc-mr-10 Укажите сумму открытия:
+                +input-ms('сумма', '100 000')(class='gc-w-160')
+            .gc-child-inline-block.gc-child-vertical-align.gc-mb-20
+                p.gc-mb-20 Укажите сумму открытия:
+                +slider-range(5, [1, 15, 30, 45, 60])(id='calculation-contribution-range-box')
+            p % ставка: <span class='gc-t-color-red'>13%</span>
+
+
+        .gc-calculation-contribution__calc-out.gc-card_red
+            .gc-calculation-contribution__special-text.gc-child-inline-block.gc-child-vertical-align.gc-mb-30
+                p.gc-mr-10 Сумма % за весь срок вклада:
+                p 90 538, 35
+            .gc-calculation-contribution__special-text.gc-child-inline-block.gc-child-vertical-align.gc-mb-50
+                p.gc-mr-10 Общая сумма:
+                p 190 538, 35
+            +button('Заказать звонок')(class='gc-button_fill-white')    
+            

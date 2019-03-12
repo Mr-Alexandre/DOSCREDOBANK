@@ -1,12 +1,20 @@
+include ./components/button/_button.pug
 doctype html
 html
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Hello
-        style(type="text/css" src="index.css")
+        script(src='jquery-3.3.1.min.js')    
+        script(src="jquery-ui(custom).min.js")
     body
+        include ./components/header/_header
         main
-            include ./components/example/example.pug
+            include ./components/title-cover/_title-cover.pug
+            include ./components/calculation-contribution/_calculation-contribution.pug
+            include ./components/advantages/_advantages.pug
+            include ./components/conditions/_conditions.pug
+            include ./components/reasons/_reasons.pug
+            include ./components/for-child/_for-child.pug
+            include ./components/how-open/_how-open.pug
         
-    script(src="index.js")    
