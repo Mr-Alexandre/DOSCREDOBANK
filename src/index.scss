@@ -19,9 +19,13 @@
 @import './components/reasons/reasons';
 @import './components/for-child/for-child';
 @import './components/how-open/how-open';
+@import './components/step-scale/_step-scale.scss';
+@import './components/quiet/quiet';
+@import './components/map/map';
 
 body{
     background-color: $color-white;
+    min-width: 1100px;
 }
 .gc-width-limiter{
     max-width: 1100px;

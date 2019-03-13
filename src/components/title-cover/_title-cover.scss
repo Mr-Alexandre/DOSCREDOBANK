@@ -43,9 +43,16 @@
     background-size: 530px auto;
     // background-size: 38% auto;
     background-position: bottom 50px center;
-    transform: translateX(170px);
+    transform: translateX(600px);
+    opacity: 0;
+    transition: transform 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     z-index: 2;
 }
+.gc-title-cover__car_animate{
+    opacity: 1;
+    transform: translateX(170px);
+}
+
 .gc-title-cover__inform{
     padding-top: 185px;
     padding-bottom: 135px;

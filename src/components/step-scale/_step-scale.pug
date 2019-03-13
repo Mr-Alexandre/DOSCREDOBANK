@@ -1,0 +1,9 @@
+mixin step-scale(...values)
+    .gc-step-scale&attributes(attributes).gc-child-inline-block.gc-text-center
+        each v, i in values
+            .gc-step-scale__box
+                .gc-step-scale__circle
+                    span= (i+1)
+                .gc-step-scale__content
+                    p= v
+        

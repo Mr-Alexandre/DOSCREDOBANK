@@ -1,7 +1,7 @@
-mixin custom-radio(groupname, ...label)
+mixin custom-radio(groupname, objects)
     .gc-custom-radio&attributes(attributes)
-        each name in label
+        each item in objects
             .gc-custom-radio__box
-                input(type="radio", name=groupname)
+                input(type="radio", name=groupname checked=item.checked class=item.class id=item.id)
                 .gc-custom-radio__box-shadow
-                span.gc-vertical-align= name
+                span.gc-vertical-align= item.label

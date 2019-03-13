@@ -1,0 +1,60 @@
+/*For detection IE9-11*/
+@media screen and (min-width:0\0) and (min-resolution:+72dpi) { 
+    .gc-quiet{
+        background-attachment: scroll!important;
+    }
+}
+.gc-quiet{
+    background-image: url('./img/moneybox.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    h2{
+        font-size: 36px;
+        color: $color-white;
+        font-family: $bold;
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+    }
+}
+.gc-quiet-box{
+    position: relative;
+    width: 320px;
+    h3{
+        font-size: 24px;
+        color: $color-white;
+        font-family: $regular;
+    }
+    margin-right: 100px;
+    &:last-child{
+        margin-right: 0px;
+    }
+    &:first-child::after{
+        content: '+';
+        position: absolute;
+        top: 50%;
+        right: -60px;
+        transform: translateY(-50%);
+        font-size: 36px;
+        color: $color-white;
+        font-family: $regular;
+    }
+    &:last-child::after{
+        content: '=';
+        position: absolute;
+        top: 50%;
+        left: -50px;
+        transform: translateY(-50%);
+        font-size: 36px;
+        color: $color-white;
+        font-family: $regular;
+    }
+}
+.gc-quiet__ulta-text{
+    font-size: 72px;
+    color: $color-white;
+    font-family: $bold;
+    line-height: 1;
+}

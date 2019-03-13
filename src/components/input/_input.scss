@@ -1,6 +1,6 @@
 .gc-input{
     input[type="text"]{
-        width: inherit;
+        width: 100%;
     }
 }
 .gc-input_ms{
@@ -13,5 +13,72 @@
         font-family: $regular;
         font-size: 18px;
         padding: 0px 10px;
+    }
+}
+.gc-input_material{
+    position: relative;
+    span{
+        position: absolute;
+        left: 0;
+        bottom: 9px;
+        font-size: 18px;
+        font-family: $regular;
+        transition: 200ms;
+    }
+    input[type="text"]{
+        height: 37px;
+        box-sizing: border-box;
+        border: 0px solid transparent;
+        background-color: transparent;
+        font-family: $regular;
+        font-size: 18px;
+        padding: 0px 0px;
+        outline: none;
+        &::placeholder{
+            font-size: 18px;
+            font-family: $regular;
+        }
+    }
+    input[type="text"]:focus + span{
+        font-size: 12px;
+        bottom: 30px;
+        left: 0px;
+        opacity: 0.7;
+    }
+    
+}
+.gc-input_material_white{
+    input[type="text"]{
+        color: $color-white;
+        border-bottom: 1px solid $color-white;
+        &::placeholder{
+            color: $color-white;
+        }
+    }
+    span{
+        color: $color-white;
+    }
+}
+.gc-input_material_black{
+    input[type="text"]{
+        color: $color-black;
+        border-bottom: 1px solid $color-black;
+        &::placeholder{
+            color: $color-black;
+        }
+    }
+    span{
+        color: $color-black;
+    }
+}
+.gc-how-open__form{
+    box-shadow: $box-shadow-card;
+}
+.gc-how-open__fields-group{
+    & > :nth-child(1n + 1){
+        margin-right: 50px;
+    }
+    & > :last-child{
+        margin-right: 0;
     }
 }

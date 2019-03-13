@@ -1,0 +1,38 @@
+.gc-map{
+    position: relative;
+    height: 580px;
+}
+.gc-map__map-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 580px;
+}
+.gc-form-container{
+    position: inherit;
+    .gc-form-compact{
+        float: right;
+        top: 100px;
+    }
+}
+.gc-form-compact{
+    // position: relative;
+    display: block;
+    width: 450px;
+    padding: 35px 75px 40px 75px;
+    box-sizing: border-box;
+    background-color: $color-white;
+    h2{
+        font-size: 30px;
+        color: $color-black;
+        font-family: $bold;   
+        // text-align: center;
+    }
+    p{
+        font-size: 14px;
+        color: $color-black;
+        font-family: $regular;
+        // text-align: center;
+    }
+}
