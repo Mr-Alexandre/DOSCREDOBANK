@@ -1,15 +1,15 @@
-section.gc-advantages.gc-pt-70.gc-pb-90
-    h2.gc-mb-35 Рассчитайте свой вклад
+section.gc-advantages.gc-pt-70.gc-pb-90   
+    h2.gc-mb-35 Преимущества
     .gc-width-limiter.gc-advantages__container.gc-child-inline-block.gc-text-center
         mixin card(src, title, lable)
-            .gc-advantages__card
+            .gc-advantages__card&attributes(attributes)
                 img(src=src alt='icon')
                 h3= title
                 p= lable
-        +card('./img/icons8-deposit-512.png', 'Высокие % ставки', 'Мы начисляем до 13% годовых')        
-        +card('./img/icons8-donation-64.png', 'Дополнительные %', 'Мы проводим капитализацию % каждый месяц')  
-        +card('./img/icons8-refund-64.png', 'Страхование вкладов', 'Все вклады застрахованы Агенством по защите депозитов Кыргызской Республики')  
-        +card('./img/icons8-donate-64.png', 'Пополнение 24/7', 'Вы можете пополнять вклад в течение всего срока')  
-        +card('./img/icons8-cash-in-hand-64.png', 'Снятие 24/7 ', 'Вы можете снять любую сумму в любое время')  
-        +card('./img/icons8-no-cash-64.png', 'Никаких комиссий', 'Мы не берем % за открытие и досрочное снятие')  
+        +card('./img/icons8-deposit-512.png', 'Высокие % ставки', 'Мы начисляем до 13% годовых')(class='wow zoomIn' data-wow-duration='600ms'  data-wow-delay="0s")        
+        +card('./img/icons8-donation-64.png', 'Дополнительные %', 'Мы проводим капитализацию % каждый месяц')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.1s")   
+        +card('./img/icons8-refund-64.png', 'Страхование вкладов', 'Все вклады застрахованы Агенством по защите депозитов Кыргызской Республики')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.2s")   
+        +card('./img/icons8-donate-64.png', 'Пополнение 24/7', 'Вы можете пополнять вклад в течение всего срока')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.3s")  
+        +card('./img/icons8-cash-in-hand-64.png', 'Снятие 24/7 ', 'Вы можете снять любую сумму в любое время')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.4s")   
+        +card('./img/icons8-no-cash-64.png', 'Никаких комиссий', 'Мы не берем % за открытие и досрочное снятие')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.5s")   
             

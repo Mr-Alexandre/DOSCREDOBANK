@@ -118,7 +118,7 @@
     content: '';
     position: absolute; 
     background-color: $color-red; 
-    transition: 0.2s;
+    transition: 0.1s;
     bottom: 0; 
     width: 3px; 
     height: 0; 
@@ -132,7 +132,7 @@
 .gc-border-effect-8:hover > .gc-focus-border-animate::after,
 .gc-border-effect-8:hover > .gc-focus-border-animate::before{
     height: 100%; 
-    transition: 0.3s; 
+    transition: 0.1s; 
     transition-delay: 0.1s;
 }
 
@@ -141,7 +141,7 @@
     content: '';
     position: absolute; 
     background-color: $color-red; 
-    transition: 0.3s;
+    transition: 0.1s;
     top: -2px; 
     width: 0px; 
     height: 3px; 
@@ -155,7 +155,7 @@
 .gc-border-effect-8:hover > .gc-focus-border-animate i::before,
 .gc-border-effect-8:hover > .gc-focus-border-animate i::after{
     width: 100%;
-    transition-delay: 0.4s;
+    transition-delay: 0.2s;
 }
 
 .gc-border-effect-8 > .gc-focus-border-animate span{
@@ -165,11 +165,11 @@
     width: 0; 
     height: 3px; 
     background-color: $color-red; 
-    transition: 0.2s;
+    transition: 0.1s;
 }
 .gc-border-effect-8:hover > .gc-focus-border-animate span{
     width: 100%; 
     transform: scaleX(1.016);
-    transition: 0.2s; 
+    transition: 0.1s; 
     left: 0;
 }

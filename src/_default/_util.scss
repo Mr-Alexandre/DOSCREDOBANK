@@ -1,3 +1,9 @@
+/*For detection IE9-11*/
+@media screen and (min-width:0\0) and (min-resolution:+72dpi) { 
+    .gc-text-grad-yellow-in-gold{
+        background: none!important;
+    }
+}
 .gc-link-list{
     margin: 0;
     padding: 0;
@@ -23,9 +29,10 @@
 }
 
 /*TODO: This method only works with uncompressed HTML and requires a fixed height on the container*/
+
 .gc-space-between{
     text-align: justify;
-    font-size: 0;
+    font-size: 0.04px;
     &::after{
         content: "";
         display: inline-block;
@@ -98,4 +105,10 @@
 }
 .gc-f-right{
     float: right;
+}
+
+.gc-text-grad-yellow-in-gold{
+    background: linear-gradient(-39deg, $color-yellow 0%, $color-gold 100%); 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

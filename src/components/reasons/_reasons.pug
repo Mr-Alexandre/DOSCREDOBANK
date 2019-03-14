@@ -3,7 +3,7 @@ section.gc-reasons.gc-pt-70.gc-pb-90
         h2.gc-mb-40 Почему Дос-Кредобанк?
         .gc-reasons-container.gc-child-inline-block.gc-text-center
             mixin reasons-card(title, subtitle, text)
-                .gc-reasons-card
+                .gc-reasons-card&attributes(attributes)
                     .gc-reasons-card__title
                         h2= title
                         p= subtitle
@@ -12,8 +12,8 @@ section.gc-reasons.gc-pt-70.gc-pb-90
                         span.gc-focus-border-animate
                             i
                             span
-            +reasons-card('1997', 'год основания', "На рынке банковских услуг более 20 лет")
-            +reasons-card('2011', 'год', 'Признан “Лидером финансового сектора” Кыргызской фондовой биржей')
-            +reasons-card('2016', 'год', 'Число клиентов выросло в 20 раз')
-            +reasons-card('2017', 'год', 'Рост активов составил 25% (до 2 596 766 000 С)')
-            +reasons-card('2018', 'год', 'Один из немногих банков Кыргызстана, начисляющих 13% годовых по депозитам')                
+            +reasons-card('1997', 'год основания', "На рынке банковских услуг более 20 лет")(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.5s")  
+            +reasons-card('2011', 'год', 'Признан “Лидером финансового сектора” Кыргызской фондовой биржей')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.5s")
+            +reasons-card('2016', 'год', 'Число клиентов выросло в 20 раз')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.5s")
+            +reasons-card('2017', 'год', 'Рост активов составил 25% (до 2 596 766 000 С)')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.5s")
+            +reasons-card('2018', 'год', 'Один из немногих банков Кыргызстана, начисляющих 13% годовых по депозитам')(class='wow zoomIn' data-wow-duration='600ms' data-wow-delay="0.5s")                

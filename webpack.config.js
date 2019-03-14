@@ -43,7 +43,7 @@ module.exports = (env, argv) => ({
                     {
                         loader: 'html-loader',
                         options: {
-                            attrs: ['img:src' ]
+                            attrs: ['img:src', ':src']
                         }
                     },
                     {

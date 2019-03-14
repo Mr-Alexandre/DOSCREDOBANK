@@ -3,15 +3,24 @@ import style from './index.scss';
 import $ from 'jquery';
 import './jquery-ui(custom).min.js';
 import './jquery.mask';
-
+import WOW from './wow.min.js';
 
 $(document).ready(function() {
+
     /* Animation */
+    var wow = new WOW({
+        boxClass:     'wow',      // default
+        animateClass: 'animated', // default
+        offset:       0,          // default
+        mobile:       true,       // default
+        live:         true        // default
+    });
+    wow.init();
+
     $(".gc-stamp").addClass("gc-stamp_active");
     setTimeout(function(){
         $(".gc-title-cover__car").addClass("gc-title-cover__car_animate");
     }, 200);
-    
 
 
     var labels = $("#calculation-contribution-range-box").find(".gc-slider-range__lables")[0];
@@ -46,7 +55,24 @@ $(document).ready(function() {
             period = Number( $(prevlabel).text() );
             recalculation();
         }
-    })
+    });
+
+    /* Top menu link */
+    $("#scroll-to-el").click(function(e) {
+        e.preventDefault();
+        var el = e.target;
+        if (el.tagName == "A"){
+            var to = $(el).attr('href');
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $(to).offset().top
+            }, 2000);
+        }
+    });
+
+    /* init edit text */
+    recalculation();
+    conditions();
+
 
     /* Inputs mask */
     $(".phone-mask").mask("+996 (999) 999-999");
@@ -62,9 +88,8 @@ $(document).ready(function() {
         recalculation();
     });
 
-    
+    /* Calc contribution */
     function recalculation(){
-        /* Calc contribution */
         var kgs = $("#valute-kgs").is(":checked");
         var usd = $("#valute-usd").is(":checked");
         var rate;
@@ -74,7 +99,7 @@ $(document).ready(function() {
         if (kgs){
             rate = 13;
         }else{
-            rate = 2;
+            rate = 5;
         }
         var openingAmount = Number($("#opening-amount").val().replace(/\s/g, ''));
 
@@ -82,6 +107,42 @@ $(document).ready(function() {
         var totalAmount = ( openingAmount * rate * 30 )/ period;
         $(totalAmountHTML).text(totalAmount.toFixed(2));
         $(netProfitHTML).text( (totalAmount - openingAmount).toFixed(2) );
+    }
+
+    /* condition */ 
+    $("#conditions-usd").change(function(){
+        conditions();
+    });
+    $("#conditions-kgs").change(function(){
+        conditions();
+    });
+    function conditions(){
+        var conditionsKgs = $("#conditions-kgs").is(":checked");
+        var conditionsUsd = $("#conditions-usd").is(":checked");
+        var conditionsMinAmount = $("#conditionsMinAmount");
+        var conditionsTerm = $("#conditionsTerm");
+        var conditionsMaxAmount = $("#conditionsMaxAmount");
+        var conditionsRate = $("#conditionsRate");
+        var dataConditions = {};
+        if (conditionsKgs){
+            dataConditions = {
+                "minAmount": "<span style='font-size: 30px'>1 000</span> сомов",
+                "maxAmount": "до <span style='font-size: 30px'>500</span> сомов",
+                "term": "от <span style='font-size: 30px'>1</span> до <span style='font-size: 30px'>60</span> месяцев",
+                "rate": "до <span style='font-size: 30px'>13%</span> годовых + <br>капитализация % <br>каждый месяц"
+            }
+        }else{
+            dataConditions = {
+                "minAmount": "<span style='font-size: 30px'>50</span> долларов",
+                "maxAmount": "до <span style='font-size: 30px'>7 000</span> долларов",
+                "term": "от <span style='font-size: 30px'>1</span> до <span style='font-size: 30px'>60</span> месяцев",
+                "rate": "до <span style='font-size: 30px'>5%</span> годовых + <br>капитализация % <br>каждый месяц"
+            }
+        }
+        conditionsMinAmount.html(dataConditions['minAmount']);
+        conditionsTerm.html(dataConditions['term']);
+        conditionsMaxAmount.html(dataConditions['maxAmount']);
+        conditionsRate.html(dataConditions['rate']);
     }
 
 });

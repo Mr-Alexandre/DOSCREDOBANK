@@ -6,7 +6,7 @@ section.gc-map
         script(type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A54b0e6153addf0871909bad4c1720d55299845867d70edb97a160ff5183eed2d&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true")
     
     .gc-width-limiter.gc-form-container
-        .gc-card.gc-form-compact.gc-text-center.gc-mt-100
+        .gc-card.gc-form-compact.gc-text-center.gc-mt-100(class='wow zoomIn' data-wow-duration='500ms'  data-wow-delay="0.5s")
             h2 Остались вопросы? <br>Напишите нам
             form(action="", method="post").gc-mt-15
                 +input-material('Ваше имя', '')(class='gc-input_material_black gc-mb-15')

@@ -26,6 +26,9 @@
     overflow: hidden;
     box-shadow: 13px -3px 32px rgba(157, 152, 152, 0.26);
     background-color: $color-white;
+
+    // transform: scale(0);
+    // opacity: 0;
     &::after{
         position: absolute;
         content: '';
@@ -59,5 +62,21 @@
         font-size: 14px;
         color: $color-black;
         text-align: center;
+    }
+}
+.gc-advantages__card_animation{
+    animation-name: gc-advantages__card-animation;
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+}
+@keyframes gc-advantages__card-animation {
+    0% {    
+        opacity: 1;
+        transform: scale(0.2) 
+    }
+    100% { 
+        opacity: 1;
+        transform: scale(1) 
     }
 }

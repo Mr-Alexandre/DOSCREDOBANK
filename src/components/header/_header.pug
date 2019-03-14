@@ -4,15 +4,15 @@ header.gc-header
     .gc-width-limiter.gc-space-between.gc-child-vertical-align
         img(src='./img/logo-full.png' alt='logo')
         mixin list(list)
-            ul&attributes(attributes).gc-link-list
+            ul#scroll-to-el&attributes(attributes).gc-link-list
                 each i in list
                     li 
-                        a(href='#'+i.link)= i.name
+                        a(href=''+i.link)= i.name
         +list([
-            {name: 'Калькулятор', link: '#calculator'},
-            {name: 'Преимущества', link: '#'},
-            {name: 'Условия', link: '#'},
-            {name: 'Почему мы?', link: '#'},
-            {name: '“Бай бол!” для детей', link: '#'},
+            {name: 'Калькулятор', link: '.gc-calculation-contribution'},
+            {name: 'Преимущества', link: '.gc-advantages'},
+            {name: 'Условия', link: '.gc-conditions'},
+            {name: 'Почему мы?', link: '.gc-reasons'},
+            {name: '“Бай бол!” для детей', link: '.gc-for-child'},
         ])                
         +button('Заказать обратный звонок')(class='gc-button_stroke')

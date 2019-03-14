@@ -3,14 +3,41 @@
     line-height: 0;
     font-size: 0;
 }
+.gc-custom-radio_ms{
+    .gc-custom-radio__box{
+        background-color: $color-grey;
+        border: 1px solid $color-grey-border;
+        padding: 0px 25px;
+        input[type="radio"]:checked ~ .gc-custom-radio__box-shadow{
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.58);
+        }
+    }
+    span{
+        color: $color-black;
+    }
+}
+.gc-custom-radio_material{
+    .gc-custom-radio__box{
+        padding: 0px;
+        margin-right: 14px;
+        height: 25px;
+        &:last-child{
+            margin-left: 0px;
+        }
+        input[type="radio"]:checked ~ .gc-custom-radio__box-shadow{
+            border-bottom: 2px solid $color-white;
+            box-sizing: border-box;
+        }
+    }
+    span{
+        color: $color-white;
+    }
+}
 .gc-custom-radio__box{
     overflow: hidden;
     position: relative;
     height: 37px;
-    padding: 0px 25px;
     display: inline-block;
-    background-color: $color-grey;
-    border: 1px solid $color-grey-border;
     box-sizing: border-box;
     input[type="radio"]{
         position: absolute;
@@ -22,9 +49,6 @@
         cursor: pointer;
         z-index: 2;
     }
-    input[type="radio"]:checked ~ .gc-custom-radio__box-shadow{
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.58);
-    }
     
     span{
         display: block;
@@ -32,7 +56,6 @@
         text-align: center;
         font-size: 18px;
         font-family: $regular;
-        color: $color-black;
         text-transform: uppercase;
     }
 }

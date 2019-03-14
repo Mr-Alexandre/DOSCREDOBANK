@@ -1,5 +1,5 @@
-mixin custom-radio(groupname, objects)
-    .gc-custom-radio&attributes(attributes)
+mixin custom-radio(groupname, objects, style) 
+    .gc-custom-radio(class=style)&attributes(attributes)
         each item in objects
             .gc-custom-radio__box
                 input(type="radio", name=groupname checked=item.checked class=item.class id=item.id)

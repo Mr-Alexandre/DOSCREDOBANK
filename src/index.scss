@@ -4,6 +4,7 @@
 @import './_default/spacing';
 @import './_default/_normalize';
 @import './_default/_util';
+@import './_default/animation';
 
 @import './components/button/_button';
 @import './components//header/_header';
@@ -22,6 +23,9 @@
 @import './components/step-scale/_step-scale.scss';
 @import './components/quiet/quiet';
 @import './components/map/map';
+
+/*Import only dev, pulling out the right classes and put it in a file './_default/animation' */
+// @import './animate.css';
 
 body{
     background-color: $color-white;

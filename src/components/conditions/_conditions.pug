@@ -1,28 +1,39 @@
 section.gc-conditions.gc-pt-100.gc-pb-100
     .gc-width-limiter
         h2.gc-mb-25 Условия
-        .gc-child-inline-block.gc-select-condition.gc-mb-35
+        .gc-child-inline-block.gc-child-vertical-align.gc-select-condition.gc-mb-35
             p Выберите валюту:
-            span.gc-select-condition__item.gc-select-condition__item_active KGS
-            span.gc-select-condition__item USD
-        .gc-card.gc-card_white.gc-conditions-card   
+            +custom-radio('calc',[
+                    {
+                        "label": "KGS",
+                        "class": "",
+                        "id": "conditions-kgs",
+                        "checked": true
+                    },{
+                        "label": "USD",
+                        "class": "",
+                        "id": "conditions-usd",
+                        "checked": false
+                    }                
+                ], 'gc-custom-radio_material')
+        .gc-card.gc-card_white.gc-conditions-card(class='wow fadeInLeft' data-wow-duration='600ms'  data-wow-delay="0s")   
             .gc-conditions-card__section
                 .gc-conditions-card__img
                     img(src='./img/icons8-fund-accounting-filled-100.png' alt='dollar')   
                 p.gc-conditions-card__lable Минимальная сумма открытия:
-                span.gc-conditions-card__value 1 000 сомов 
+                span#conditionsMinAmount.gc-conditions-card__value.gc-text-grad-yellow-in-gold 1 000 сомов 
             .gc-conditions-card__section
                 .gc-conditions-card__img
                     img(src='./img/icons8-fund-accounting-filled-100.png' alt='dollar')   
                 p.gc-conditions-card__lable Срок по программе:
-                span.gc-conditions-card__value от 1 до 60 месяцев
+                span#conditionsTerm.gc-conditions-card__value.gc-text-grad-yellow-in-gold от 1 до 60 месяцев
             .gc-conditions-card__section
                 .gc-conditions-card__img
                     img(src='./img/icons8-fund-accounting-filled-100.png' alt='dollar')   
                 p.gc-conditions-card__lable Максимальная сумма пополнения <br>(в течении всего срока):
-                span.gc-conditions-card__value до 500 сомов
+                span#conditionsMaxAmount.gc-conditions-card__value.gc-text-grad-yellow-in-gold до 500 сомов
             .gc-conditions-card__section
                 .gc-conditions-card__img
                     img(src='./img/icons8-fund-accounting-filled-100.png' alt='dollar')   
                 p.gc-conditions-card__lable % ставка:
-                span.gc-conditions-card__value до 13% годовых +<br/> капитализация % <br/>каждый месяц
+                span#conditionsRate.gc-conditions-card__value.gc-text-grad-yellow-in-gold до 13% годовых +<br/> капитализация % <br/>каждый месяц
