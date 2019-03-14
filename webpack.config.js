@@ -100,9 +100,10 @@ module.exports = (env, argv) => ({
                 test: /\.(ttf|eot|woff|woff2)$/,
                 exclude: /node_modules/,
                 use: [{
-                    loader: 'url-loader',
+                    loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
+                        outputPath: 'font/'
                     }
                 }]
             },
@@ -131,7 +132,7 @@ module.exports = (env, argv) => ({
             filename: "index.css"
         }),
         new CopyWebpackPlugin([
-            {from: './src/font', to: 'font'}
+            
         ])
     ],
     devtool: argv.mode === 'production' ? 'source-map' : 'eval-sourcemap'
