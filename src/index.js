@@ -6,6 +6,8 @@ import './jquery.mask';
 import WOW from './wow.min.js';
 
 $(document).ready(function() {
+    document.getElementById('valute-kgs').checked = true;
+    document.getElementById('conditions-kgs').checked = true;
 
     /* Animation */
     var wow = new WOW({
@@ -90,8 +92,10 @@ $(document).ready(function() {
 
     /* Calc contribution */
     function recalculation(){
+        
         var kgs = $("#valute-kgs").is(":checked");
         var usd = $("#valute-usd").is(":checked");
+        console.log(`kgs ${kgs} usd ${usd}`);
         var rate;
         var netProfitHTML = $("#net-profit");
         var totalAmountHTML = $("#total-amount");
@@ -143,6 +147,52 @@ $(document).ready(function() {
         conditionsTerm.html(dataConditions['term']);
         conditionsMaxAmount.html(dataConditions['maxAmount']);
         conditionsRate.html(dataConditions['rate']);
+    }
+
+
+    var modal = $('#modal');
+    var modalClose = $('#modal .gc-modal-container__close');
+    var btnModalClose = $('#modal #btn-modal-close');
+    var btmModalSend = $('#modal-send');
+    modalClose.click(function(){
+        modal.hide();
+    });
+    btnModalClose.click(function(){
+        modal.hide();
+    });
+
+    
+    btmModalSend.click(function(e){
+        e.preventDefault();
+
+
+        modalThanks();
+    })
+
+
+    function modalThanks(){
+        modal.find('.gc-modal-container_form').hide();
+        modal.find('.gc-modal-container_thanks').show();
+        
+    }
+    function showModal(type) {
+        if (type == 'form'){
+            modal.find('.gc-modal-container_form').show();
+            modal.find('.gc-modal-container_thanks').hide();
+            
+        }else{
+            modal.find('.gc-modal-container_form').hide();
+            modal.find('.gc-modal-container_thanks').show();
+        }
+        modal.show();
+    }
+
+
+    var listBtnOpenForm = document.querySelectorAll('#open-modal-form');
+    for (var i = 0; i < listBtnOpenForm.length; i++) {
+        $(listBtnOpenForm[i]).click(function(){
+            showModal('form');
+        });
     }
 
 });

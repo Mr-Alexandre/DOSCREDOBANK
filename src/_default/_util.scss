@@ -28,9 +28,9 @@
     }
 }
 
-/*TODO: This method only works with uncompressed HTML and requires a fixed height on the container*/
 
 .gc-space-between{
+    /*WARNING: This method only works with uncompressed HTML and requires a fixed height on the container*/
     text-align: justify;
     font-size: 0.04px;
     &::after{
@@ -84,6 +84,11 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+.gc-horizontal-align{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .gc-t-color-red{

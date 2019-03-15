@@ -1,0 +1,21 @@
+include ../button/_button.pug
+include ../input/_input.pug
+
+.gc-modal#modal
+    .gc-modal-container.gc-card.gc-card_white
+        span.gc-modal-container__close
+        .gc-modal-container_form
+            
+            p.gc-mb-20.gc-text-center Оформить заявку
+            form(action="", method="post")
+                .gc-modal-border.gc-mb-20
+                    +input-material('Ваше имя*', '')(class='gc-input_material_black gc-mb-15')
+                    +input-material('Ваш телефон*', '', 'phone-mask')(class='gc-input_material_black')
+                +button('Отправить')(class='gc-button_fill-red gc-horizontal-align' id='modal-send')
+        .gc-modal-container_thanks
+            span.gc-modal-container__close
+            .gc-modal-border.gc-mt-45.gc-mb-20
+                p.gc-text-center Спасибо! Ваша заявка <br>принята. В ближайшее время <br>мы с Вами свяжемся!
+            +button('OK')(class='gc-button_fill-red gc-horizontal-align' id='btn-modal-close')  
+          
+
