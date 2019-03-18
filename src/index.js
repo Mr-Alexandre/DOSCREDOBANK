@@ -95,7 +95,6 @@ $(document).ready(function() {
         
         var kgs = $("#valute-kgs").is(":checked");
         var usd = $("#valute-usd").is(":checked");
-        console.log(`kgs ${kgs} usd ${usd}`);
         var rate;
         var netProfitHTML = $("#net-profit");
         var totalAmountHTML = $("#total-amount");

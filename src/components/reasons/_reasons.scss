@@ -65,53 +65,6 @@
 .gc-focus-border-animate{
     
 }
-// .gc-border-effect-8 > .gc-focus-border-animate:before,
-// .gc-border-effect-8 > .gc-focus-border-animate:after{
-//     content: ""; 
-//     position: absolute; 
-//     top: 0; 
-//     left: 0; 
-//     width: 0; 
-//     height: 2px; 
-//     background-color: 
-//     $color-red; 
-//     transition: 0.3s;
-// }
-// .gc-border-effect-8 > .gc-focus-border-animate:after{
-//     top: auto; 
-//     bottom: 0; 
-//     left: auto; 
-//     right: 0;
-// }
-// .gc-border-effect-8 > .gc-focus-border-animate i:before,
-// .gc-border-effect-8 > .gc-focus-border-animate i:after{
-//     content: ""; 
-//     position: absolute; 
-//     top: 0; 
-//     left: 0; 
-//     width: 2px; 
-//     height: 0; 
-//     background-color: 
-//     $color-red; 
-//     transition: 0.4s;
-// }
-// .gc-border-effect-8 > .gc-focus-border-animate i:after{
-//     left: auto; 
-//     right: 0; 
-//     top: auto; 
-//     bottom: 0;
-// }
-// .gc-border-effect-8:hover > .gc-focus-border-animate:before,
-// .gc-border-effect-8:hover > .gc-focus-border-animate:after{
-//     width: 100%; 
-//     transition: 0.3s;
-// }
-// .gc-border-effect-8:hover > .gc-focus-border-animate i:before,
-// .gc-border-effect-8:hover > .gc-focus-border-animate i:after{
-//     height: 100%; 
-//     transition: 0.4s;
-// }
-
 
 .gc-border-effect-8 > .gc-focus-border-animate::before,
 .gc-border-effect-8 > .gc-focus-border-animate::after{
