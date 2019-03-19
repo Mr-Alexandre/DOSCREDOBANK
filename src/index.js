@@ -6,9 +6,7 @@ import './jquery.mask';
 import WOW from './wow.min.js';
 
 $(document).ready(function() {
-    document.getElementById('valute-kgs').checked = true;
-    document.getElementById('conditions-kgs').checked = true;
-
+    
     /* Animation */
     var wow = new WOW({
         boxClass:     'wow',      // default
@@ -25,40 +23,6 @@ $(document).ready(function() {
     }, 200);
 
 
-    var labels = $("#calculation-contribution-range-box").find(".gc-slider-range__lables")[0];
-    var prevlabel;
-    var colorRed = '#e31e24';
-    var period = 1;
-
-    $("#calculation-contribution-range").slider({
-        classes: {
-            "ui-slider": "gc-slider-range",
-            "ui-slider-handle": "gc-slider-range__thumb",
-            "ui-slider-range": "gc-slider-range__track",
-            "ui-slider-range-min": "gc-slider-range__track"
-        },
-        range: "min",
-        orientation: "horizontal",
-        value: 3,
-        min: 0,
-        max: 4,
-        step: 1,
-        create: function( e, ui ) {
-            prevlabel = labels.querySelectorAll(`[data-index="3"]`);
-            $(prevlabel).css({"color": colorRed});
-
-            period = Number( $(prevlabel).text() );
-        },
-        slide: function (e, ui) {
-            $(prevlabel).css({"color": ''});
-            prevlabel = labels.querySelectorAll(`[data-index="${ui.value}"]`);
-            $(prevlabel).css({"color": colorRed});
-
-            period = Number( $(prevlabel).text() );
-            recalculation();
-        }
-    });
-
     /* Top menu link */
     $("#scroll-to-el").click(function(e) {
         e.preventDefault();
@@ -71,46 +35,139 @@ $(document).ready(function() {
         }
     });
 
-    /* init edit text */
-    recalculation();
-    conditions();
-
 
     /* Inputs mask */
     $(".phone-mask").mask("+996 (999) 999-999");
     $('.money-mask').mask('000 000 000 000 000', {reverse: true});
+
+
+    /* Сalculation of the contribution */
+    var _kgs = $("#valute-kgs");
+    var _usd = $("#valute-usd");
+    var _RangeLabels = $("#calculation-contribution-range-box").find(".gc-slider-range__lables")[0];
+    var _RangeLength = Number( $("#calculation-contribution-range-box").attr('data-val-length') );
+    var _prevRangeLabel;
+    var _interestRateHTML = $('#interest-rate');
+    var _CurentPeriod;
+    var _colorRed = '#e31e24';
+    var _interestRate = {
+        kgs: {
+            '1-2': 2,
+            '3-5': 3,
+            '6-8': 5,
+            '9-11': 6.5,
+            '12-60': 10.5
+        },
+        usd: {
+            '1-2': 2,
+            '3-5': 2.5,
+            '6-8': 3,
+            '9-11': 3.5,
+            '12-60': 5
+        },
+        rub: {
+            '1-2': 2,
+            '3-5': 4.5,
+            '6-8': 5,
+            '9-11': 5.5,
+            '12-60': 8
+        },
+        eur: {
+            '1-2': 0.5,
+            '3-5': 1,
+            '6-8': 1.5,
+            '9-11': 2,
+            '12-60': 3
+        }
+    };
+    $("#calculation-contribution-range").slider({
+        classes: {
+            "ui-slider": "gc-slider-range",
+            "ui-slider-handle": "gc-slider-range__thumb",
+            "ui-slider-range": "gc-slider-range__track",
+            "ui-slider-range-min": "gc-slider-range__track"
+        },
+        range: "min",
+        orientation: "horizontal",
+        value: 3,
+        min: 0,
+        max: _RangeLength - 1,
+        step: 1,
+        create: function( e, ui ) {
+            
+            _prevRangeLabel = _RangeLabels.querySelectorAll(`[data-index="3"]`);
+            $(_prevRangeLabel).css({"color": _colorRed});
+
+            _CurentPeriod = $(_prevRangeLabel).text();
+            var rate = getCurrencyAndRate()["rate"];
+            _interestRateHTML.text(rate+'%');
+        },
+        slide: function (e, ui) {
+            $(_prevRangeLabel).css({"color": ''});
+            _prevRangeLabel = _RangeLabels.querySelectorAll(`[data-index="${ui.value}"]`);
+            $(_prevRangeLabel).css({"color": _colorRed});
+
+            _CurentPeriod = $(_prevRangeLabel).text();
+            recalculation();
+            var rate = getCurrencyAndRate()["rate"];
+            _interestRateHTML.text(rate+'%');
+        }
+    });
+
 
     $("#opening-amount").keyup(function(){
         recalculation();
     });
     $("#valute-usd").change(function(){
         recalculation();
+        var rate = getCurrencyAndRate()["rate"];
+        _interestRateHTML.text(rate+'%');
     });
     $("#valute-kgs").change(function(){
         recalculation();
+        var rate = getCurrencyAndRate()["rate"];
+         _interestRateHTML.text(rate+'%');
     });
 
-    /* Calc contribution */
     function recalculation(){
         
-        var kgs = $("#valute-kgs").is(":checked");
-        var usd = $("#valute-usd").is(":checked");
-        var rate;
         var netProfitHTML = $("#net-profit");
         var totalAmountHTML = $("#total-amount");
-        
-        if (kgs){
-            rate = 13;
-        }else{
-            rate = 5;
-        }
         var openingAmount = Number($("#opening-amount").val().replace(/\s/g, ''));
-
-        // Вознаграждение = (Сумма на депозите x 10% x 30 дней) / 360 дней
-        var totalAmount = ( openingAmount * rate * 30 )/ period;
+        var rate = getCurrencyAndRate()["rate"];
+        var period = Number( _CurentPeriod.charAt(0) ); 
+        
+        var totalAmount = calculationDeposits(1, period, rate, openingAmount);
         $(totalAmountHTML).text(totalAmount.toFixed(2));
         $(netProfitHTML).text( (totalAmount - openingAmount).toFixed(2) );
+        
     }
+    function calculationDeposits(i, per, _percent, _amount) {
+        // Вознаграждение = ( Сумма на депозите x 10.5%/12 ) 
+        var monthlyPercent = ( _amount * (_percent/100) )/12;
+        var monthlyPayments = _amount + monthlyPercent; 
+        if (i == per){
+            return monthlyPayments;
+        }
+        if (i < per) {
+            return calculationDeposits(i + 1, per, _percent, monthlyPayments);
+        }
+    }
+    
+    function getCurrencyAndRate(){
+        var currency = '';
+        if ( _kgs.is(":checked") ){
+            currency = 'kgs';
+        }else if ( _usd.is(":checked") ){
+            currency = 'usd';
+        }
+
+        return {"currency": currency, "rate": _interestRate[currency][_CurentPeriod]};
+    }
+
+    /* init edit text */
+    recalculation();
+    conditions();
 
     /* condition */ 
     $("#conditions-usd").change(function(){
@@ -119,6 +176,7 @@ $(document).ready(function() {
     $("#conditions-kgs").change(function(){
         conditions();
     });
+
     function conditions(){
         var conditionsKgs = $("#conditions-kgs").is(":checked");
         var conditionsUsd = $("#conditions-usd").is(":checked");
@@ -149,6 +207,8 @@ $(document).ready(function() {
     }
 
 
+    /* Modal window */
+
     var modal = $('#modal');
     var modalClose = $('#modal .gc-modal-container__close');
     var btnModalClose = $('#modal #btn-modal-close');
@@ -163,7 +223,6 @@ $(document).ready(function() {
     
     btmModalSend.click(function(e){
         e.preventDefault();
-
 
         modalThanks();
     })

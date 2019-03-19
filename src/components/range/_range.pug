@@ -1,5 +1,5 @@
-mixin slider-range(count, val)
-    .gc-slider-range-box&attributes(attributes)
+mixin slider-range(val)
+    .gc-slider-range-box(data-val-length=val.length)&attributes(attributes)
         .gc-slider-range(data-range-lable=val id='calculation-contribution-range').gc-slider-range_horizontal
         .gc-slider-range__lables
             each v, i in val

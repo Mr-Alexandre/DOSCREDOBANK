@@ -20,15 +20,15 @@ section.gc-calculation-contribution.gc-width-limiter.gc-pt-70.gc-pb-95
                         "class": "",
                         "id": "valute-usd",
                         "checked": false
-                    }                
+                    }          
                 ], 'gc-custom-radio_ms')
             .gc-child-inline-block.gc-child-vertical-align.gc-mb-40
                 p.gc-mr-10 Укажите сумму открытия:
                 +input-ms('сумма', '100 000', 'money-mask', 'opening-amount')(class='gc-w-160')
             .gc-child-inline-block.gc-child-vertical-align.gc-mb-20
                 p.gc-mb-20 Выберите срок (мес.):
-                +slider-range(5, [1, 15, 30, 45, 60])(id='calculation-contribution-range-box')
-            p % ставка: <span class='gc-t-color-red'>13%</span>
+                +slider-range(['1-2', '3-5', '6-8', '9-11', '12-60'])(id='calculation-contribution-range-box')
+            p % ставка: <span class='gc-t-color-red' id='interest-rate'>13%</span>
 
 
         .gc-calculation-contribution__calc-out.gc-card_red
