@@ -1,75 +1,45 @@
 .gc-input{
-    input[type="text"]{
-        width: 100%;
-    }
+    width: 100%;
 }
 .gc-input_ms{
-    input[type="text"]{
-        height: 37px;
-        box-sizing: border-box;
-        border: 1px solid $color-grey-border;
-        background-color: #f5f7f6;
-        color: $color-black;
-        font-family: $regular;
-        font-size: 18px;
-        padding: 0px 10px;
-    }
+    height: 37px;
+    box-sizing: border-box;
+    border: 1px solid $color-grey-border;
+    background-color: #f5f7f6;
+    color: $color-black;
+    font-family: $regular;
+    font-size: 18px;
+    padding: 0px 10px;
 }
 .gc-input_material{
     position: relative;
-    span{
-        position: absolute;
-        left: 0;
-        bottom: 9px;
+    height: 37px;
+    box-sizing: border-box;
+    border: 0px solid transparent;
+    background-color: transparent;
+    font-family: $regular;
+    font-size: 18px;
+    padding: 0px 0px;
+    outline: none;
+    &::placeholder{
         font-size: 18px;
         font-family: $regular;
-        transition: 200ms;
-    }
-    input[type="text"]{
-        height: 37px;
-        box-sizing: border-box;
-        border: 0px solid transparent;
-        background-color: transparent;
-        font-family: $regular;
-        font-size: 18px;
-        padding: 0px 0px;
-        outline: none;
-        &::placeholder{
-            font-size: 18px;
-            font-family: $regular;
-        }
-    }
-    input[type="text"]:focus + span{
-        font-size: 12px;
-        bottom: 30px;
-        left: 0px;
-        opacity: 0.7;
     }
     
 }
 .gc-input_material_white{
-    input[type="text"]{
-        color: $color-white;
-        border-bottom: 1px solid $color-white;
-        &::placeholder{
-            color: $color-white;
-        }
-    }
-    span{
+    color: $color-white;
+    border-bottom: 1px solid $color-white;
+    &::placeholder{
         color: $color-white;
     }
 }
 .gc-input_material_black{
-    input[type="text"]{
+    color: $color-black;
+    border-bottom: 1px solid $color-black;
+    &::placeholder{
         color: $color-black;
-        border-bottom: 1px solid $color-black;
-        &::placeholder{
-            color: $color-black;
-            opacity: 1;
-        }
-    }
-    span{
-        color: $color-black;
+        opacity: 1;
     }
 }
 .gc-how-open__form{

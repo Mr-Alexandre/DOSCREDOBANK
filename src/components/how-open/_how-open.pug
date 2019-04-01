@@ -9,9 +9,9 @@ section.gc-how-open.gc-pt-70.gc-pb-70
         h2 В 14+ ребенок воспользуется Вашим подарком!
         .gc-card.gc-card_red.gc-pt-45.gc-pb-35.gc-mt-25.gc-mb-30.gc-how-open__form
             h2.gc-text-white Откройте депозит для ребенка
-            form(action="", method="post").gc-how-open__fields-group.gc-pt-25.gc-child-inline-block.gc-text-center
-                +input-material('Ваше имя', '')(class='gc-input_material_white')
-                +input-material('Ваш телефон', '', 'phone-mask')(class='gc-input_material_white')
+            form(class='trafficwave_form' action="", method="post").gc-how-open__fields-group.gc-pt-25.gc-child-inline-block.gc-text-center
+                +input-material(placeholder='Ваше имя' name='full_name' class='gc-input_material_white')
+                +input-material(placeholder='Ваш телефон' name='phone' class='gc-input_material_white phone-mask')
                 +button('Открыть сейчас')(class='gc-button_fill-white')
             p.gc-text-white.gc-mt-25.gc-text-center Ваши персональные данные не будут переданы третьим лицам    
         p.gc-default-p.gc-text-center 21 796 вкладов уже оформлено

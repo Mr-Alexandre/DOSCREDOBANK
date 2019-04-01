@@ -1,8 +1,10 @@
-mixin input-ms(placehold, text='', classForInput='', idForInput='')
-    .gc-input.gc-input_ms&attributes(attributes)
-        input(type="text" placeholder=placehold value=text class=classForInput id=idForInput)
+mixin input-ms()
+    //- mixin input-ms(placehold, text='', classForInput='', idForInput='')
+    //- .gc-input.gc-input_ms&attributes(attributes)
+    //-     input(type="text" placeholder=placehold value=text class=classForInput id=idForInput)
+    input(type="text").gc-input.gc-input_ms&attributes(attributes)
 
-mixin input-material(placehold, text='', classForInput='', idForInput='')       
-    .gc-input.gc-input_material&attributes(attributes)
-        input(type="text" placeholder=placehold value=text class=classForInput id=idForInput)
-        //- span= placehold
+mixin input-material()       
+    //- .gc-input.gc-input_material&attributes(attributes)
+    //-     input(type="text" placeholder=placehold value=text class=classForInput id=idForInput)
+    input(type="text").gc-input.gc-input_material&attributes(attributes)

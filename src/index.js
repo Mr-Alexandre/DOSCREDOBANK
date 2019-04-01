@@ -221,11 +221,33 @@ $(document).ready(function() {
     });
 
     
-    btmModalSend.click(function(e){
-        e.preventDefault();
-
-        modalThanks();
-    })
+    // btmModalSend.click(function(e){
+        
+    // })
+    $(".trafficwave_form").submit(function (event) {
+        event.preventDefault();
+        var form = event.target;
+        console.log($(form).serialize());
+        console.log($(this).serializeArray());
+        var data = {
+            "uuid": "e3675e62-f4e5-4929-a941-3a7c053e1b29",
+            "info": {},
+            "url": window.location.href,
+            "comment": ""
+        };
+        var fields = [ 
+            {"request_key": "phone", "form_id": "#phone"}, 
+            // {"request_key": "full_name", "form_id": "#full_name"}|#phone"}, 
+            {"request_key": "full_name", "form_id": "#full_name"}
+        ];
+        for (var i=0; i < fields.length; i++) { 
+            data["info"][fields[i].request_key] = $(fields[i].form_id).val(); 
+        }
+        // $.ajax(   
+        //     // Unknown macro: {type}
+        // );
+        // modalThanks();
+    });
 
 
     function modalThanks(){

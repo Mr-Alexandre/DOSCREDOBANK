@@ -7,15 +7,15 @@ include ../input/_input.pug
         .gc-modal-container_form
             
             p.gc-mb-20.gc-text-center Оформить заявку
-            form(action="", method="post")
+            form(class='trafficwave_form' action="", method="post")
                 .gc-modal-border.gc-mb-20
-                    +input-material('Ваше имя*', '')(class='gc-input_material_black gc-mb-15')
-                    +input-material('Ваш телефон*', '', 'phone-mask')(class='gc-input_material_black')
+                    +input-material(placeholder='Ваше имя' name='full_name' class='gc-input_material_black gc-mb-15' id='phone')
+                    +input-material(placeholder='Ваш телефон*' name='phone' class='gc-input_material_black phone-mask')
                 +button('Отправить')(class='gc-button_fill-red gc-horizontal-align' id='modal-send')
         .gc-modal-container_thanks
             span.gc-modal-container__close
             .gc-modal-border.gc-mt-45.gc-mb-20
                 p.gc-text-center Спасибо! Ваша заявка <br>принята. В ближайшее время <br>мы с Вами свяжемся!
-            +button('OK')(class='gc-button_fill-red gc-horizontal-align' id='btn-modal-close')  
+            +button('OK')(type='submit' class='gc-button_fill-red gc-horizontal-align' id='btn-modal-close')  
           
 
