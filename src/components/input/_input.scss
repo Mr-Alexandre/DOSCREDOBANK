@@ -1,5 +1,5 @@
 .gc-input{
-    width: 100%;
+
 }
 .gc-input_ms{
     height: 37px;
@@ -39,7 +39,6 @@
     border-bottom: 1px solid $color-black;
     &::placeholder{
         color: $color-black;
-        opacity: 1;
     }
 }
 .gc-how-open__form{

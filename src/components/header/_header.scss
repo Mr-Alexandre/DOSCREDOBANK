@@ -2,4 +2,8 @@
     background-color: $color-grey;
     box-shadow: 13px -3px 32px rgba(157, 152, 152, 0.5);
     padding: 35px 0px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
