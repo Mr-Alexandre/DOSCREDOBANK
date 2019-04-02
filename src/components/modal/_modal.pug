@@ -9,8 +9,9 @@ include ../input/_input.pug
             p.gc-mb-20.gc-text-center Оформить заявку
             form(class='trafficwave_form' action="", method="post")
                 .gc-modal-border.gc-mb-20
-                    +input-material(placeholder='Ваше имя' name='full_name' class='gc-input_material_black gc-mb-15' id='phone')
-                    +input-material(placeholder='Ваш телефон*' name='phone' class='gc-input_material_black phone-mask')
+                    +input-material(placeholder='Ваше имя*' name='full_name' class='gc-input_material_black gc-w-100per gc-mb-15' id='full_name')
+                    +input-material(placeholder='Ваш телефон*' name='phone' class='gc-input_material_black gc-w-100per phone-mask' id='phone')
+                    .gc-modal-error.gc-card_red.gc-mt-20 Error
                 +button('Отправить')(class='gc-button_fill-red gc-horizontal-align' id='modal-send')
         .gc-modal-container_thanks
             span.gc-modal-container__close

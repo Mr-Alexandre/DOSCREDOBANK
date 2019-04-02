@@ -8,6 +8,13 @@
     background-color: rgba(0, 10, 18, 0.2);
     z-index: 100;
 }
+.gc-modal-error{
+    display: none;
+    padding: 10px 20px;
+    color: $color-white;
+    text-align: center;
+    font-family: $regular;
+}
 .gc-modal-container{
     position: relative;
     width: 500px;

@@ -8,8 +8,8 @@ section.gc-map
     .gc-width-limiter.gc-form-container
         .gc-card.gc-form-compact.gc-text-center.gc-mt-100(class='wow zoomIn' data-wow-duration='500ms'  data-wow-delay="0.5s")
             h2 Остались вопросы? <br>Напишите нам
-            form(class='trafficwave_form' action="", method="post").gc-mt-15
-                +input-material(placeholder='Ваше имя' name='full_name' class='gc-input_material_black gc-mb-15')
-                +input-material(placeholder='Ваш телефон' name='phone' class='gc-input_material_black')
+            form(class='trafficwave_form' action="", method="post" data-form-type='page').gc-mt-15
+                +input-material(placeholder='Ваше имя' name='full_name' class='gc-input_material_black gc-w-100per gc-mb-15')
+                +input-material(placeholder='Ваш телефон' name='phone' class='gc-input_material_black gc-w-100per')
                 p.gc-mt-30.gc-mb-30 Ваши персональные данные <br>не будут переданы третьим лицам
                 +button('Написать сейчас')(class='gc-button_fill-red')

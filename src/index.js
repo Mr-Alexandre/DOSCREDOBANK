@@ -17,6 +17,8 @@ $(document).ready(function() {
     });
     wow.init();
 
+    var errorUi = $('.gc-modal-error');
+
     $(".gc-stamp").addClass("gc-stamp_active");
     setTimeout(function(){
         $(".gc-title-cover__car").addClass("gc-title-cover__car_animate");
@@ -135,8 +137,9 @@ $(document).ready(function() {
         var totalAmountHTML = $("#total-amount");
         var openingAmount = Number($("#opening-amount").val().replace(/\s/g, ''));
         var rate = getCurrencyAndRate()["rate"];
-        var period = Number( _CurentPeriod.charAt(0) ); 
-        
+        // var period = Number( _CurentPeriod.charAt(0) );
+        var period = Number( _CurentPeriod.match(/^[0-9]*/) );
+
         var totalAmount = calculationDeposits(1, period, rate, openingAmount);
         $(totalAmountHTML).text(totalAmount.toFixed(2));
         $(netProfitHTML).text( (totalAmount - openingAmount).toFixed(2) );
@@ -226,27 +229,41 @@ $(document).ready(function() {
     // })
     $(".trafficwave_form").submit(function (event) {
         event.preventDefault();
-        var form = event.target;
-        console.log($(form).serialize());
-        console.log($(this).serializeArray());
+
+        /*Yandex metrika*/
+        ym(52972660, 'reachGoal', 'MFS');
+        var form = $(this);
+
+        /*trafficwave script*/
         var data = {
             "uuid": "e3675e62-f4e5-4929-a941-3a7c053e1b29",
             "info": {},
             "url": window.location.href,
             "comment": ""
         };
-        var fields = [ 
-            {"request_key": "phone", "form_id": "#phone"}, 
-            // {"request_key": "full_name", "form_id": "#full_name"}|#phone"}, 
-            {"request_key": "full_name", "form_id": "#full_name"}
-        ];
-        for (var i=0; i < fields.length; i++) { 
-            data["info"][fields[i].request_key] = $(fields[i].form_id).val(); 
+        var fields = [{"request_key": "phone", "form_id": "#phone"}, {"request_key": "full_name", "form_id": "#full_name"}];
+        for (var i=0; i < fields.length; i++) {
+            data["info"][fields[i].request_key] = $(fields[i].form_id).val();
         }
-        // $.ajax(   
-        //     // Unknown macro: {type}
-        // );
-        // modalThanks();
+        $.ajax({
+            type: "POST",
+            url: "https://api.trafficwave.kz/core/fin_institute/lead/add/",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function(result){
+                errorUi.hide();
+                modalThanks();
+                if ( form.attr(data-form-type) == 'page' ) {
+                    showModal('page');
+                }
+            },
+            error: function(err){
+                console.log(err);
+                errorUi.text(`Error: status code - ${err.status}`);
+                errorUi.show();
+            },
+            dataType: 'json'
+        });
     });
 
 
@@ -257,9 +274,9 @@ $(document).ready(function() {
     }
     function showModal(type) {
         if (type == 'form'){
+            errorUi.hide();
             modal.find('.gc-modal-container_form').show();
             modal.find('.gc-modal-container_thanks').hide();
-            
         }else{
             modal.find('.gc-modal-container_form').hide();
             modal.find('.gc-modal-container_thanks').show();
@@ -268,7 +285,7 @@ $(document).ready(function() {
     }
 
 
-    var listBtnOpenForm = document.querySelectorAll('#open-modal-form');
+    var listBtnOpenForm = document.querySelectorAll('.open-modal-form');
     for (var i = 0; i < listBtnOpenForm.length; i++) {
         $(listBtnOpenForm[i]).click(function(){
             showModal('form');
