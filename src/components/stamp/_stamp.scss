@@ -1,6 +1,8 @@
 .gc-stamp{
     opacity: 0;
     transform: rotate(-2deg) scale(3.5);
+    background-position: center;
+    background-size: contain;
     
 }
 .gc-stamp_active{

@@ -4,6 +4,23 @@
         background-attachment: scroll!important;
     }
 }
+@media screen and (max-width: 970px) {
+    .gc-conditions {
+        h2 {
+            text-align: center;
+        }
+    }
+    .gc-conditions__select-val{
+        text-align: center;
+    }
+    .gc-conditions-card{
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 971px) {
+
+}
+
 .gc-conditions{
     background-image: url('./img/conditions.jpg');
     background-position: center;

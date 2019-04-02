@@ -7,7 +7,7 @@
 @import './_default/animation';
 
 @import './components/button/_button';
-@import './components//header/_header';
+@import './components/header/_header';
 @import './components/title-cover/title-cover';
 @import './components/stamp/stamp';
 @import './components/stamp/stamp';
@@ -24,15 +24,7 @@
 @import './components/quiet/quiet';
 @import './components/map/map';
 @import './components/modal/modal';
+@import './components/mobile-footer/mobile-footer';
 
 /*Import only dev, pulling out the right classes and put it in a file './_default/animation' */
 // @import './animate.css';
-
-body{
-    background-color: $color-white;
-    min-width: 1100px;
-}
-.gc-width-limiter{
-    max-width: 1100px;
-    margin: 0 auto;
-}

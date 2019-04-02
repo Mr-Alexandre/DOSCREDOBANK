@@ -1,0 +1,9 @@
+.gc-mobile-footer.gc-mt-55
+    .gc-mobile-footer__form.gc-card.gc-card_red.gc-pt-45.gc-pb-35
+        h2.gc-text-white Откройте депозит для ребенка
+        form(class='trafficwave_form' action="", method="post" data-form-type='page').gc-how-open__fields-group.gc-pt-25.gc-child-inline-block.gc-text-center
+            +input-material(placeholder='Ваше имя' name='full_name' class='gc-input_material_white')
+            +input-material(placeholder='Ваш телефон' name='phone' class='gc-input_material_white phone-mask')
+            +button('Открыть сейчас')(class='gc-w-100per gc-button_fill-white')
+        p.gc-text-white.gc-mt-25.gc-text-center Ваши персональные данные не будут переданы третьим лицам
+    include ../header/_header

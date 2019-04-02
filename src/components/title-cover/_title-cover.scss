@@ -1,34 +1,112 @@
+@media screen and (max-width: 970px) {
+    .gc-title-cover {
+        background-color: #f4f6f5;
+        &::before {
+            width: 100%;
+            height: 100%;
+            background-position: left top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('img/hand-with-key-mob__.jpg');
+        }
+
+        &::after {
+            width: 100%;
+            height: 50%;
+            top: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 90%;
+        }
+    }
+    .gc-title-cover__inform {
+        padding-top: 130px;
+        padding-bottom: 585px;
+        left: 50%;
+        transform: translateX(-50%);
+        h1{
+            text-align: center;
+            /* (60px / 970px) * 100*/
+            font-size: 6.185567010309278vw;
+        }
+        p{
+            text-align: center;
+            /* (30px / 970px) * 100*/
+            font-size: 3.092783505154639vw;
+        }
+        .gc-button{
+            width: 100%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .gc-title-cover__car{
+        background-repeat: no-repeat;
+        background-size: 49.89690721649485% auto;
+        background-position: bottom left;
+        transform: translateX(100%);
+    }
+    .gc-title-cover__car_animate{
+        transform: translateX(5%);
+    }
+}
+@media screen and (min-width: 971px) {
+    .gc-title-cover {
+
+        &::before {
+            width: 50%;
+            height: 100%;
+            top: 0;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-color: #f1f3f2;
+            background-image: url('./img/hand-with-key.jpg');
+        }
+
+        &::after {
+            width: 50%;
+            height: 100%;
+            top: 0;
+            background-repeat: no-repeat;
+            transform: translateX(-70px);
+        }
+    }
+    .gc-title-cover__inform {
+        padding-top: 185px;
+        padding-bottom: 135px;
+        h1{
+            font-size: 55px;
+        }
+        p {
+            font-size: 30px;
+        }
+    }
+    .gc-title-cover__car{
+        background-repeat: no-repeat;
+        background-size: 530px auto;
+        background-position: bottom 50px center;
+        transform: translateX(600px);
+    }
+    .gc-title-cover__car_animate{
+        transform: translateX(170px);
+    }
+}
 .gc-title-cover{
     position: relative;
     width: 100%;
     overflow: hidden;
-    // background-image: url('./img/house.png') , url('./img/hand-with-key.jpg');
-    // background-position:  top 10px right 25px, top 0 left 0;
-    // background-repeat: no-repeat, no-repeat;
-    // background-size: auto , 50% 100%;
     
     &::before{
         position: absolute;
         content: '';
-        width: 50%;
-        height: 100%;
-        top: 0;
         left: 0;
-        background-color: #f1f3f2;
-        background-image: url('./img/hand-with-key.jpg');
-        background-repeat: no-repeat;
-        background-position: top right;
     }
     &::after{
         position: absolute;
         content: '';
-        width: 50%;
-        height: 100%;
-        top: 0;
         right: 0;
         background-image: url('./img/house.png');
-        background-repeat: no-repeat;
-        transform: translateX(-70px);
     }
     
 }
@@ -38,33 +116,28 @@
     height: 100%;
     position: absolute;
     background-image: url('./img/tesla-model-s.png');
-    background-repeat: no-repeat;
-    background-size: 530px auto;
+    //background-repeat: no-repeat;
+    //background-size: 530px auto;
     // background-size: 38% auto;
-    background-position: bottom 50px center;
-    transform: translateX(600px);
+    //background-position: bottom 50px center;
+    //transform: translateX(600px);
     opacity: 0;
     transition: transform 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
     z-index: 2;
 }
 .gc-title-cover__car_animate{
     opacity: 1;
-    transform: translateX(170px);
 }
 
 .gc-title-cover__inform{
-    padding-top: 185px;
-    padding-bottom: 135px;
     z-index: 3;
     position: relative;
     h1{
         color: $color-black;
-        font-size: 55px;
         font-family: $bold;
     }
     p{
         color: $color-black;
-        font-size: 30px;
         font-family: $regular;
     }
 }

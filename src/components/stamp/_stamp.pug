@@ -1,3 +1,2 @@
 mixin stamp(src)
-    .gc-stamp&attributes(attributes)
-        img(src=src alt='stamp')
+    .gc-stamp(style='background-image: url("'+src+'");')&attributes(attributes)

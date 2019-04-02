@@ -1,0 +1,35 @@
+@media screen and (min-width: 971px) {
+  .gc-mobile-footer{
+      display: none;
+  }
+}
+.gc-mobile-footer{
+  .gc-header{
+    background-color: $color-white;
+    box-shadow: 0 13px 32px rgba(157, 152, 152, 0.5);
+  }
+}
+.gc-mobile-footer__form {
+  width: 100%;
+  max-width: 515px;
+  margin: 0 auto;
+  margin-bottom: 55px;
+  padding: 45px 50px 31px 50px;
+  box-sizing: border-box;
+
+  .gc-input{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  h2{
+    color: $color-black;
+    font-family: $bold;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+  }
+  p{
+    font-size: 14px;
+    font-family: $regular;
+  }
+}

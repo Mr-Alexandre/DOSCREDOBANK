@@ -1,3 +1,25 @@
+@media screen and (max-width: 970px) {
+    .gc-for-child{
+        padding-bottom: 55px;
+    }
+    .gc-for-child-card {
+        width: 100%;
+        max-width: 515px;
+    }
+    .gc-for-child-containber{
+        text-align: center;
+        margin-bottom: 30px;
+
+    }
+    .gc-for-child-card:last-child{
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 971px) {
+    .gc-for-child-card {
+        width: 47%;
+    }
+}
 .gc-for-child{
     background-color: $color-grey;
     h2{
@@ -19,7 +41,6 @@
 
 }
 .gc-for-child-card {
-    width: 47%;
     height: 260px;
     position: relative;
     overflow: hidden;

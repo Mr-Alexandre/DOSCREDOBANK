@@ -1,8 +1,21 @@
+@media screen and (max-width: 970px) {
+    .gc-advantages__card{
+        margin: 7px;
+    }
+}
+@media screen and (min-width: 971px) {
+    .gc-advantages {
+        background-color: $color-grey;
+        background-image: url('./img/kyrgyzstan-map.png');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .gc-advantages__card{
+        margin: 20px;
+    }
+}
+
 .gc-advantages{
-    background-color: $color-grey;
-    background-image: url('./img/kyrgyzstan-map.png');
-    background-position: center;
-    background-repeat: no-repeat;
     h2{
         font-size: 36px;
         color: $color-black;
@@ -21,7 +34,6 @@
     padding-top: 40px;
     width: 250px;
     height: 225px;
-    margin: 20px;
     box-sizing: border-box;
     overflow: hidden;
     box-shadow: 13px -3px 32px rgba(157, 152, 152, 0.26);

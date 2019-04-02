@@ -1,9 +1,18 @@
+@media screen and (max-width: 970px) {
+    .gc-button{
+        /* (18px / 970px) * 100*/
+    }
+}
+@media screen and (min-width: 971px) {
+}
+
+
 .gc-button{
     height: 50px;
     padding: 0px 25px;
     font-family: $regular;
-    font-size: 18px;
     border-radius: 25px;
+    font-size: 18px;
     cursor: pointer;
     outline: none;
 }

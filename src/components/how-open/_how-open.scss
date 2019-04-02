@@ -1,6 +1,43 @@
+@media screen and (max-width: 970px) {
+    .gc-how-open{
+        padding-bottom: 85px;
+        h2 {
+            font-size: 30px;
+        }
+        .gc-step-scale {
+            margin-top: 33px;
+        }
+    }
+    .gc-how-open__form{
+        width: 100%;
+        max-width: 515px;
+        margin: 0 auto;
+        margin-top: 35px;
+        padding: 45px 50px 31px 50px;
+        box-sizing: border-box;
+
+        .gc-input{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .gc-button{
+            width: 100%;
+        }
+    }
+    .gc-how-open__spec-text{
+        display: none;
+    }
+}
+@media screen and (min-width: 971px) {
+    .gc-how-open {
+        h2 {
+            font-size: 36px;
+        }
+    }
+}
+
 .gc-how-open{
     h2{
-        font-size: 36px;
         color: $color-black;
         font-family: $bold;
         width: 100%;
@@ -9,6 +46,13 @@
     }
 }
 .gc-how-open__form{
+    h2{
+        color: $color-black;
+        font-family: $bold;
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+    }
     p{
         font-size: 14px;
         font-family: $regular;
